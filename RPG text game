@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text-Based RPG</title>
+</head>
+<body>
+  <script>
+    function introduction() {
+      alert("Welcome to the Text-Based RPG!");
+      alert("You find yourself in a dark forest.");
+      alert("You see a path to the left and a mysterious cave to the right.");
+    }
+
+    function makeDecision() {
+      let choice = prompt("What will you do?\n1. Take the left path.\n2. Enter the mysterious cave.");
+
+      return choice;
+    }
+
+    function leftPath() {
+      alert("You take the left path and encounter a friendly merchant.");
+      alert("The merchant offers you a healing potion.");
+      let buyPotion = prompt("Do you want to buy the potion?\n1. Yes\n2. No");
+
+      if (buyPotion === '1') {
+        alert("You buy the healing potion and continue your journey.");
+      } else {
+        alert("You decide not to buy the potion and continue your journey.");
+      }
+    }
+
+    function mysteriousCave() {
+      alert("You enter the mysterious cave and find a treasure chest.");
+      let openChest = prompt("Do you want to open the chest?\n1. Yes\n2. No");
+
+      if (openChest === '1') {
+        alert("You open the chest and find a powerful sword!");
+      } else {
+        alert("You decide not to open the chest and continue your journey.");
+      }
+    }
+
+    function main() {
+      introduction();
+
+      while (true) {
+        let choice = makeDecision();
+
+        if (choice === '1') {
+          leftPath();
+        } else if (choice === '2') {
+          mysteriousCave();
+        } else {
+          alert("Invalid choice. Please enter 1 or 2.");
+        }
+
+        let playAgain = prompt("Do you want to play again? (yes/no)");
+
+        if (playAgain.toLowerCase() !== 'yes') {
+          alert("Thanks for playing! Goodbye!");
+          break;
+        }
+      }
+    }
+
+    main();
+  </script>
+</body>
+</html>
